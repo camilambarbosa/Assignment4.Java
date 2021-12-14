@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+    </head>
+    
+    
+    <body>
+        <main class="container">
+        <h1>Book Review </h1>
+        
+            <a href='/add_Book'> Add Book</a>
+            
+            <ol>
+                <li th:each="book: ${bookList}">
+                    <a th:href="@{/main_page/{id}(id = ${book.id})}"><span th:text="${book.title}"/> <span th:text="${book.authors}"/> </a>
+                    <a href="/main_page">( review ) </a>
+                </li> 
+            </ol>
+            
+            <div th:if="${showReview}">
+                
+                <div class="separator"/>
+                <span class="span">Title:</span> 
+                <span>Caraval</span><br/>
+                <span>Authors:</span>
+                <span>S. Garber</span> <br/><br/>
+                
+                <ul>
+                    <li>Awsome book</li>
+                    <li>Too long</li>
+                </ul>
+                
+                
+                
+                
+
+            </div>
+        
+            
+            
+       </main> 
+    </body>
+</html>

@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec. 13, 2021, 3:48:20 p.m.
+    Author     : camilabarbosa
+*/
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov. 29, 2021, 11:47:32 p.m.
+    Author     : camilabarbosa
+*/
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+
+}
+
+.container {
+
+    width: 40vw;
+    height: 100vw;
+    margin: 0 auto;
+
+}
+
+h1 {
+    padding-top: 1rem;
+    margin-bottom:  1rem;
+    text-align: center;
+}
+
+.contact_Item {
+    display: flex;
+    justify-content:space-between;
+
+}
+
+.contact_Item img {
+    width: 1rem;
+    height: 1rem;
+    margin-left: .2rem;
+
+}
+
+
+.button {
+    padding: .9rem;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+
+.contact-list-form {
+    padding-top: 1rem
+}
+
+label {
+    width: 4rem;
+    display: inline-block;
+
+}
+
+input[type="text"] {
+    border: 1px solid black;
+}
+
+
+.linkButton {
+    display: inline-block;
+    
+    
+}
+
+.cancelButton{
+    display: inline-block;
+ 
+    background: #efefef;
+    padding: .8rem;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.span{
+    margin-top: 5px;
+    display: inline-block;
+}
+.separator{
+    margin-top: 3px;
+    width: 200px;
+    height: 2px;
+    background: gray;
+    border-bottom: 1px solid gray;
+    
+    
+}
+

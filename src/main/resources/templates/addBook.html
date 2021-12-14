@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+    </head>
+    <body>
+        <div>Add Book</div><br/>
+        
+        <form action="/save_Book" method="post"><br/><br/>
+       
+            <label for="bookId">IBook Id</label>
+            <input type="text" id="bookId" name="bookId"/><br/><br/>
+            
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title"/><br/><br/>
+            
+            <label for="authors">Authors</label>
+            <input type="text" id="authors" name="authors"/><br/><br/>
+            
+            <input type="submit" class="button" value="Save"/>
+            <a class="cancelButton" href="/main_page">Cancel </a>
+
+        </form>
+
+    </body>
+</html>
