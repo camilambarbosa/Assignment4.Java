@@ -14,16 +14,16 @@ title varchar(150) NOT NULL,
 authors varchar(50) NOT NULL);
 
 INSERT INTO book (id, title, authors)
-VALUES (1, 'Cinder', ' J. Bries');
+VALUES (1001, 'Cinder', ' J. Bries');
 
 INSERT INTO book (id, title, authors)
-VALUES (11, 'Caraval', ' S. Garber');
+VALUES (1011, 'Caraval', ' S. Garber');
 
 INSERT INTO book (id, title, authors)
-VALUES (21, 'Speaker', ' B. Oracle');
+VALUES (1021, 'Speaker', ' B. Oracle');
 
 INSERT INTO book (id, title, authors)
-VALUES (31, 'Fairest', ' G. Potter');
+VALUES (1031, 'Fairest', ' G. Potter');
 
 
 CREATE TABLE review (
@@ -35,16 +35,16 @@ CREATE TABLE review (
 
 
 INSERT INTO review (book_Id, review)
-VALUES (21, ' Really good Book');
+VALUES (1021, ' Really good Book');
 
 INSERT INTO review (book_Id, review)
-VALUES (11, ' Note really good');
+VALUES (1011, ' Note really good');
 
 INSERT INTO review (book_Id, review)
-VALUES (11, ' Really good');
+VALUES (1011, ' Really good');
 
 INSERT INTO review (book_Id, review)
-VALUES (31, ' The best Book ever');
+VALUES (1031, ' The best Book ever');
 
 INSERT INTO review (book_Id, review)
-VALUES (01, ' Nothing more than expected');
+VALUES (1001, ' Nothing more than expected');
