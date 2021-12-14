@@ -38,6 +38,10 @@ public class Book {
     public void moveReview(Review review){
         this.reviewList.remove(review);
     }
+    
+    public List<Review> getReviewList (){
+        return this.reviewList;
+    }
             
             
 

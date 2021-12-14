@@ -6,14 +6,18 @@
 package com.java.BookReviews.controller;
 
 
+import com.java.BookReviews.dto.AddReviewForm;
 import com.java.BookReviews.model.Book;
+import com.java.BookReviews.model.Review;
 import com.java.BookReviews.repository.BookRepository;
 import com.java.BookReviews.repository.ReviewRepository;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,12 +73,48 @@ public class BookController {
         
         model.addAttribute("bookList", bookList);
         
+        Book selectedBook= bookRepository.getById(id);
+        System.out.println(" size of reviewList: " + selectedBook.getReviewList().size());
+        model.addAttribute("selectedBook",selectedBook);
+        model.addAttribute("reviewList", selectedBook.getReviewList());
         model.addAttribute("showReview", true);
-       
-        
+      
         return "mainPage";
          
      }
     
+     
+     @RequestMapping({"/edit_review/{id}", "/{id}"})
+     public String edit_review (@PathVariable("id") Integer id, Model model){
+        System.out.println("***********Entrou no EditrREVIEW: " + id);
+        //List <Book> bookList = bookRepository.findAll();
+       
+        Optional<Book> selectedBookOptional= bookRepository.findById(id);
+        Book selectedBook = selectedBookOptional.get();
+        System.out.println(" ************selectedBook: " + selectedBook);
+        model.addAttribute("selectedBook",selectedBook);
+      
+        return "addReview";
+         
+     }
+     
+     @RequestMapping ({"/save_review"})
+    public String save_review(@ModelAttribute AddReviewForm reviewToBeAdd){   
+        System.out.println("***********Entrou no SAVE Review: " + reviewToBeAdd);
+        Optional<Book> bookOptional = bookRepository.findById(reviewToBeAdd.getBookId());
+        Book book = bookOptional.get();
+        
+        Review review = new Review();
+        review.setReview(reviewToBeAdd.getReview());
+        review.setBook(book);
+        book.addReview(review);
+        
+        
+        reviewRepository.save(review);
+        bookRepository.save(book);
+        
+        return "forward:main_page";
+        
+    }
     
 }

@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="reviews")
+@Table(name="review")
 
 public class Review {
     @Id
@@ -54,6 +54,16 @@ public class Review {
         this.review = review;
     }
 
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Review{" + "id=" + id +  ", review=" + review + '}';

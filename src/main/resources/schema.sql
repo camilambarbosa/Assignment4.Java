@@ -27,19 +27,24 @@ VALUES (31, 'Fairest', ' G. Potter');
 
 
 CREATE TABLE review (
-id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-bookId varchar(150) NOT NULL,
-review varchar(50) NOT NULL);
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    review varchar(50) NOT NULL,
+    book_Id int  NOT NULL,
+    CONSTRAINT FK_Bookreview FOREIGN KEY  (book_Id) REFERENCES book(id)
+);
 
 
-INSERT INTO review (bookId, review)
+INSERT INTO review (book_Id, review)
 VALUES (21, ' Really good Book');
 
-INSERT INTO review (bookId, review)
+INSERT INTO review (book_Id, review)
 VALUES (11, ' Note really good');
 
-INSERT INTO review (bookId, review)
+INSERT INTO review (book_Id, review)
+VALUES (11, ' Really good');
+
+INSERT INTO review (book_Id, review)
 VALUES (31, ' The best Book ever');
 
-INSERT INTO review (bookId, review)
+INSERT INTO review (book_Id, review)
 VALUES (01, ' Nothing more than expected');
