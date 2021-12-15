@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enterprise Java Development - Assignment 4
+ * Due December 15th 2021       
+ * Authors: Camila Barbosa 192622796, Nicholas Carvalho 991634372
  */
 package com.java.BookReviews.controller;
 
@@ -66,15 +66,7 @@ public class BookController {
         return "forward:main_page";
         
     }
-    
-    // @RequestMapping (value="/saveAdd", method= RequestMethod.POST )
-    //public String saveAdd(@ModelAttribute Contact contact){
 
-      //  contactRepository.save(contact);
-       //() return "forward:contactList";
-  //  }
-    
-    
     @RequestMapping({"/main_page/{id}", "/{id}"})
      public String main_Page_withReview (@PathVariable("id") Integer id, Model model){
          System.out.println("***********Entrou no main_page REVIEW: " + id);
@@ -97,7 +89,6 @@ public class BookController {
      @RequestMapping({"/edit_review/{id}", "/{id}"})
      public String edit_review (@PathVariable("id") Integer id, Model model){
         System.out.println("***********Entrou no EditrREVIEW: " + id);
-        //List <Book> bookList = bookRepository.findAll();
        
         Optional<Book> selectedBookOptional= bookRepository.findById(id);
         Book selectedBook = selectedBookOptional.get();

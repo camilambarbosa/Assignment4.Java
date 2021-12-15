@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enterprise Java Development - Assignment 4
+ * Due December 15th 2021       
+ * Authors: Camila Barbosa 192622796, Nicholas Carvalho 991634372
  */
 package com.java.BookReviews.model;
 
@@ -15,10 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- *
- * @author camilabarbosa
- */
 @Entity
 @Table(name="book")
 public class Book {

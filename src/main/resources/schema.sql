@@ -1,11 +1,7 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  camilabarbosa
- * Created: Dec. 13, 2021
+/*
+ * Enterprise Java Development - Assignment 4
+ * Due December 15th 2021       
+ * Authors: Camila Barbosa 192622796, Nicholas Carvalho 991634372
  */
 
 CREATE TABLE book(

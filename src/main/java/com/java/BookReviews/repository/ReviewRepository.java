@@ -1,18 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enterprise Java Development - Assignment 4
+ * Due December 15th 2021       
+ * Authors: Camila Barbosa 192622796, Nicholas Carvalho 991634372
  */
+ 
 package com.java.BookReviews.repository;
 
 import com.java.BookReviews.model.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author camilabarbosa
- */
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Integer>{
     
