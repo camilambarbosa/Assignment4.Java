@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -58,12 +59,21 @@ public class BookController {
         
     }
     
-    @RequestMapping ({"/save_Book"})
-    public String save_Book(Model model){   
-        System.out.println("***********Entrou no SAVE BOOK");
+    @RequestMapping (value="/save_Book", method= RequestMethod.POST )
+    public String save_Book(@ModelAttribute Book book){   
+      
+      bookRepository.save(book);
         return "forward:main_page";
         
     }
+    
+    // @RequestMapping (value="/saveAdd", method= RequestMethod.POST )
+    //public String saveAdd(@ModelAttribute Contact contact){
+
+      //  contactRepository.save(contact);
+       //() return "forward:contactList";
+  //  }
+    
     
     @RequestMapping({"/main_page/{id}", "/{id}"})
      public String main_Page_withReview (@PathVariable("id") Integer id, Model model){
@@ -116,5 +126,5 @@ public class BookController {
         return "forward:main_page";
         
     }
-    
+     
 }
